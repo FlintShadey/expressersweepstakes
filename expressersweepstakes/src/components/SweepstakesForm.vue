@@ -13,7 +13,7 @@
     </div>
 
     <v-row justify="center" align="center" class="fill-height">
-      <v-col cols="12" sm="8" md="6" lg="4">
+      <v-col cols="12" sm="10" md="8" lg="6" xl="4">
         <v-card class="elevation-24 festive-card" rounded="xl">
           <!-- Festive header with gradient background -->
           <div class="festive-header pa-6">
@@ -377,9 +377,8 @@ const submitEntry = async () => {
 }
 
 .sweepstakes-logo {
-  max-width: 200px;
-  max-height: 120px;
-  width: auto;
+  max-width: 100%;
+  width: clamp(120px, 50vw, 200px);
   height: auto;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
   animation: logoGlow 3s ease-in-out infinite alternate;
@@ -419,6 +418,8 @@ const submitEntry = async () => {
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   animation: textGlow 2s ease-in-out infinite alternate;
+  font-size: clamp(1.5rem, 5vw, 2.125rem) !important;
+  line-height: 1.2;
 }
 
 @keyframes textGlow {
@@ -437,6 +438,7 @@ const submitEntry = async () => {
 .celebration-subtitle {
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-size: clamp(1rem, 3.5vw, 1.25rem) !important;
 }
 
 .prize-banner {
@@ -586,13 +588,31 @@ const submitEntry = async () => {
 
 /* Mobile optimizations */
 @media (max-width: 600px) {
+  .festive-container {
+    padding: 8px !important;
+  }
+
   .festive-card {
-    margin: 16px;
+    margin: 8px;
     border-radius: 16px;
   }
 
+  .festive-header {
+    padding: 16px !important;
+  }
+
   .celebration-title {
-    font-size: 1.75rem !important;
+    font-size: clamp(1.5rem, 4vw, 1.75rem) !important;
+    line-height: 1.2;
+  }
+
+  .celebration-subtitle {
+    font-size: clamp(1rem, 3vw, 1.25rem) !important;
+  }
+
+  .prize-banner {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    padding: 6px 12px;
   }
 
   .celebration-icon {
@@ -600,12 +620,52 @@ const submitEntry = async () => {
   }
 
   .sweepstakes-logo {
-    max-width: 150px;
-    max-height: 90px;
+    width: clamp(100px, 40vw, 150px);
   }
 
   .confetti {
     font-size: 16px;
+  }
+
+  .celebration-button {
+    font-size: clamp(1rem, 3vw, 1.1rem) !important;
+    padding: 12px 16px !important;
+  }
+
+  .v-card-text {
+    padding: 16px !important;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 375px) {
+  .festive-container {
+    padding: 4px !important;
+  }
+
+  .festive-card {
+    margin: 4px;
+  }
+
+  .festive-header {
+    padding: 12px !important;
+  }
+
+  .celebration-title {
+    font-size: clamp(1.25rem, 5vw, 1.5rem) !important;
+  }
+
+  .celebration-subtitle {
+    font-size: clamp(0.875rem, 3vw, 1rem) !important;
+  }
+
+  .prize-banner {
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+    padding: 4px 8px;
+  }
+
+  .sweepstakes-logo {
+    width: clamp(80px, 35vw, 120px);
   }
 }
 </style>

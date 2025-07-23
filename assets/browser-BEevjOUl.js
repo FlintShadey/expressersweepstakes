@@ -1,0 +1,1 @@
+import{c as e,d as t,e as n,f as r,g as i,h as a}from"./index-DHRVheC_.js";a();export{e as Headers,t as Request,n as Response,r as default,i as fetch};

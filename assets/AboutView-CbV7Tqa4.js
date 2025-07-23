@@ -1,0 +1,1 @@
+import{b as e,i as t,j as n,k as r}from"./index-DHRVheC_.js";const i={},a={class:`about`};function o(e,i){return r(),n(`div`,a,i[0]||=[t(`h1`,null,`This is an about page`,-1)])}var s=e(i,[[`render`,o]]);export{s as default};
