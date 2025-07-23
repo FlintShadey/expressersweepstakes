@@ -15,7 +15,8 @@ export default defineConfig({
   },
   base: '/expressersweepstakes/',
   build: {
-    outDir: 'dist',
+    outDir: '../',
     assetsDir: 'assets',
+    emptyOutDir: false,
   },
 })

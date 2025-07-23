@@ -1,0 +1,25 @@
+{
+  "name": "🎉 Express ER Sweepstakes 🎉",
+  "short_name": "🏆 ER Sweepstakes",
+  "description": "🎊 Enter the Express ER Sweepstakes for your chance to win amazing prizes! 🎁",
+  "theme_color": "#FF6B35",
+  "background_color": "#16213E",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "/pwa-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
