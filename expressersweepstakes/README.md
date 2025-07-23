@@ -37,17 +37,20 @@ CREATE TABLE sweepstakes_entries (
 ## Configuration
 
 The app is configured to use the following Supabase instance:
+
 - Project URL: `https://ceyopueguqklwwdjkvcf.supabase.co`
 - API Key: Included in the source code
 
 ## Development
 
 1. Install dependencies:
+
    ```bash
    npm install
    ```
 
 2. Start development server:
+
    ```bash
    npm run dev
    ```
@@ -67,7 +70,7 @@ The project is configured for automatic deployment to GitHub Pages using GitHub 
 ## Form Features
 
 - **First Name**: Required field with minimum 2 characters
-- **Last Name**: Required field with minimum 2 characters  
+- **Last Name**: Required field with minimum 2 characters
 - **Phone Number**: Required field with automatic formatting to (XXX) XXX-XXXX
 - **Validation**: Real-time form validation
 - **Success/Error Handling**: User feedback for submission results
