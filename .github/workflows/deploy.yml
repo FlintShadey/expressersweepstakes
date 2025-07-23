@@ -24,30 +24,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-          cache: "npm"
-          cache-dependency-path: "expressersweepstakes/package-lock.json"
-
-      - name: Install dependencies
-        run: |
-          cd expressersweepstakes
-          npm ci
-
-      - name: Build
-        run: |
-          cd expressersweepstakes
-          npm run build
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./expressersweepstakes/dist"
+          path: "."
 
       - name: Deploy to GitHub Pages
         id: deployment
