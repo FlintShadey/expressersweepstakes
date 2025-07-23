@@ -1,0 +1,7 @@
+<!-- This is a placeholder for the 192x192 PWA icon -->
+<!-- You should replace this with an actual 192x192 PNG icon file -->
+<svg width="192" height="192" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="192" fill="#1976D2"/>
+  <text x="96" y="110" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">ER</text>
+  <text x="96" y="140" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">Sweepstakes</text>
+</svg>
