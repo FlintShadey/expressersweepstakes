@@ -13,7 +13,7 @@ export default defineConfig(({ command }) => ({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  base: '/',
+  base: command === 'build' ? '/expressersweepstakes/' : '/',
   build: {
     outDir: command === 'build' ? '../' : 'dist',
     assetsDir: 'assets',
