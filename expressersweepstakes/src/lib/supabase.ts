@@ -6,9 +6,16 @@ const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYm
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 export interface SweepstakesEntry {
-  id?: number
+  id?: string
   first_name: string
   last_name: string
   phone_number: string
+  entry_date?: string
   created_at?: string
+  updated_at?: string
+  ip_address?: string
+  user_agent?: string
+  entry_source?: string
+  is_winner?: boolean
+  notes?: string
 }

@@ -198,6 +198,8 @@ const submitEntry = async () => {
       first_name: formData.first_name.trim(),
       last_name: formData.last_name.trim(),
       phone_number: formData.phone_number.trim(),
+      entry_source: 'web',
+      user_agent: navigator.userAgent,
     }
 
     const { error } = await supabase.from('sweepstakes_entries').insert([entry])
@@ -208,9 +210,13 @@ const submitEntry = async () => {
 
     showSuccess.value = true
     resetForm()
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error submitting entry:', error)
-    errorMessage.value = 'Failed to submit entry. Please try again.'
+    if (error?.code === '23505') {
+      errorMessage.value = 'This phone number has already been entered in the sweepstakes!'
+    } else {
+      errorMessage.value = 'Failed to submit entry. Please try again.'
+    }
   } finally {
     loading.value = false
   }
