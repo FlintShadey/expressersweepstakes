@@ -105,7 +105,7 @@
               <template v-slot:prepend>
                 <div class="success-celebration">🎉</div>
               </template>
-              <div class="text-h6 font-weight-bold">🏆 CONGRATULATIONS! 🏆</div>
+              
               <div class="mt-1">
                 🎊 Your entry has been submitted successfully! Good luck in the drawing! 🍀
               </div>
