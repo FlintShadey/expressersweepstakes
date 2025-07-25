@@ -6,17 +6,22 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
-export default defineConfig(({ command }) => ({
-  plugins: [vue(), vueJsx(), vueDevTools()],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
+export default defineConfig(({ command, mode }) => {
+  const isNetlify = mode === 'netlify'
+  const isProduction = command === 'build'
+  
+  return {
+    plugins: [vue(), vueJsx(), vueDevTools()],
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+      },
     },
-  },
-  base: command === 'build' ? '/expressersweepstakes/' : '/',
-  build: {
-    outDir: command === 'build' ? '../' : 'dist',
-    assetsDir: 'assets',
-    emptyOutDir: false,
-  },
-}))
+    base: isNetlify ? '/' : (isProduction ? '/expressersweepstakes/' : '/'),
+    build: {
+      outDir: isNetlify ? 'dist' : (isProduction ? '../' : 'dist'),
+      assetsDir: 'assets',
+      emptyOutDir: !isNetlify, // Don't empty for Netlify, empty for GitHub Pages
+    },
+  }
+})
