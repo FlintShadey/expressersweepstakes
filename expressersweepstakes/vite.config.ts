@@ -21,7 +21,7 @@ export default defineConfig(({ command, mode }) => {
     build: {
       outDir: isNetlify ? 'dist' : (isProduction ? '../' : 'dist'),
       assetsDir: 'assets',
-      emptyOutDir: !isNetlify, // Don't empty for Netlify, empty for GitHub Pages
+      emptyOutDir: isNetlify, // Empty dist for Netlify to remove stale files
     },
   }
 })

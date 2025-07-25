@@ -1,11 +1,11 @@
 [build]
-  # Set the build command to run from the expressersweepstakes directory
-  command = "cd expressersweepstakes && npm run build:netlify"
-  # The directory where Netlify should look for the built files
-  publish = "expressersweepstakes/dist"
+  # Build the Vue PWA from the expressersweepstakes subfolder
+  base    = "expressersweepstakes"
+  command = "npm ci && npm run build-only:netlify"
+  publish = "dist"
 
-[build.environment]
-  NODE_VERSION = "18"
+  [build.environment]
+    NODE_VERSION = "18"
 
 # Redirect all routes to index.html for SPA support
 [[redirects]]
